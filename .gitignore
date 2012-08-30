@@ -1,5 +1,10 @@
 *.py[co]
 
+# Aptana
+.project
+.pydevproject
+.settings
+
 # Packages
 *.egg
 *.egg-info

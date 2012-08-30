@@ -46,6 +46,11 @@ class TestDims(TestWorksheet):
             ws = wb.get_sheet_by_name(name = sheetn)
 
             eq_(ws._dimensions, self.expected[i])
+            
+    def test_get_highest_column_iter(self):
+        wb = self._open_wb()
+        ws = wb.worksheets[0]
+        eq_(ws.get_highest_column(), 7)
 
 
 class TestText(TestWorksheet):

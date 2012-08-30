@@ -28,6 +28,7 @@ import os
 import os.path
 import shutil
 import difflib
+import unittest
 from pprint import pprint
 from tempfile import gettempdir
 from sys import version_info
@@ -42,6 +43,11 @@ from openpyxl.shared.xmltools import pretty_indent
 DATADIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'test_data'))
 TMPDIR = os.path.join(gettempdir(), 'openpyxl_test_temp')
 
+# class inheriting from unittest.TestCase, required for Nose to pick up tests,
+# see http://nose.readthedocs.org/en/latest/writing_tests.html#test-classes
+
+class OpenPyxlTest(unittest.TestCase):
+    pass
 
 def make_tmpdir():
     try:

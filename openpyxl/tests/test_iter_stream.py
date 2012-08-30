@@ -25,13 +25,13 @@
 
 from nose.tools import eq_, raises, assert_raises
 import os.path as osp
-from openpyxl.tests.helper import DATADIR
+from openpyxl.tests.helper import DATADIR, OpenPyxlTest
 from openpyxl.reader.iter_worksheet import get_range_boundaries
 from openpyxl.reader.excel import load_workbook
 import openpyxl.tests.test_iter as test_iter
 import datetime
 
-class StreamTestWorksheet(object):
+class StreamTestWorksheet(OpenPyxlTest):
     workbook_name = osp.join(DATADIR, 'genuine', 'empty_no_dimensions.xlsx')
 
     def _open_wb(self):

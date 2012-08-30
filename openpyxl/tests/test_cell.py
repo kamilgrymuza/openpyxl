@@ -37,6 +37,7 @@ from openpyxl.shared.exc import ColumnStringIndexException, \
 from openpyxl.shared.date_time import CALENDAR_WINDOWS_1900
 from openpyxl.cell import column_index_from_string, \
         coordinate_from_string, get_column_letter, Cell, absolute_coordinate
+from openpyxl.tests.helper import OpenPyxlTest
 
 import decimal
 
@@ -109,7 +110,7 @@ def test_initial_value():
     eq_(cell.TYPE_NUMERIC, cell.data_type)
 
 
-class TestCellValueTypes(object):
+class TestCellValueTypes(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):

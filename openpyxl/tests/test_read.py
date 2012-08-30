@@ -31,7 +31,7 @@ from datetime import datetime, date
 from nose.tools import eq_, raises
 
 # package imports
-from openpyxl.tests.helper import DATADIR
+from openpyxl.tests.helper import DATADIR, OpenPyxlTest
 from openpyxl.worksheet import Worksheet
 from openpyxl.workbook import Workbook
 from openpyxl.style import NumberFormat, Style
@@ -135,7 +135,7 @@ def test_read_workbook_with_no_properties():
                 'empty_with_no_properties.xlsx')
     wb = load_workbook(filename=genuine_wb)
 
-class TestReadWorkbookWithStyles(object):
+class TestReadWorkbookWithStyles(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):
@@ -165,7 +165,7 @@ class TestReadWorkbookWithStyles(object):
                 NumberFormat.FORMAT_PERCENTAGE_00)
 
 
-class TestReadBaseDateFormat(object):
+class TestReadBaseDateFormat(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):

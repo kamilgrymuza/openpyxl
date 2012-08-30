@@ -34,7 +34,7 @@ from nose.tools import eq_
 
 # package imports
 from openpyxl.tests.helper import DATADIR, TMPDIR, make_tmpdir, clean_tmpdir, \
-        assert_equals_file_content
+        assert_equals_file_content, OpenPyxlTest
 from openpyxl.reader.workbook import read_properties_core, \
         read_sheets_titles
 from openpyxl.writer.workbook import write_properties_core, \
@@ -44,7 +44,7 @@ from openpyxl.shared.date_time import CALENDAR_WINDOWS_1900
 from openpyxl.workbook import DocumentProperties, Workbook
 
 
-class TestReaderProps(object):
+class TestReaderProps(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):
@@ -76,7 +76,7 @@ class TestReaderProps(object):
                 ['Sheet1 - Text', 'Sheet2 - Numbers', 'Sheet3 - Formulas', 'Sheet4 - Dates'])
 
 
-class TestLibreOfficeCompat(object):
+class TestLibreOfficeCompat(OpenPyxlTest):
     """
     Just tests that the correct date/time format is returned from LibreOffice saved version
     """
@@ -102,7 +102,7 @@ class TestLibreOfficeCompat(object):
                 ['Sheet1 - Text', 'Sheet2 - Numbers', 'Sheet3 - Formulas', 'Sheet4 - Dates'])
 
 
-class TestWriteProps(object):
+class TestWriteProps(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):

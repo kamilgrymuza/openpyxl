@@ -31,7 +31,8 @@ import datetime
 from nose.tools import eq_, assert_false, ok_
 
 # package imports
-from openpyxl.tests.helper import DATADIR, assert_equals_file_content, get_xml
+from openpyxl.tests.helper import (DATADIR, assert_equals_file_content, get_xml,
+    OpenPyxlTest)
 from openpyxl.reader.style import read_style_table
 from openpyxl.workbook import Workbook
 from openpyxl.style import NumberFormat
@@ -39,7 +40,7 @@ from openpyxl.writer.styles import StyleWriter
 from openpyxl.style import NumberFormat, Border, Color, Font
 
 
-class TestCreateStyle(object):
+class TestCreateStyle(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):
@@ -62,7 +63,7 @@ class TestCreateStyle(object):
         reference_file = os.path.join(DATADIR, 'writer', 'expected', 'simple-styles.xml')
         assert_equals_file_content(reference_file, self.writer.write_table())
 
-class TestStyleWriter(object):
+class TestStyleWriter(OpenPyxlTest):
 
     def setUp(self):
 

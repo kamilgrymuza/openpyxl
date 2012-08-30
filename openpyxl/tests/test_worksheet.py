@@ -35,8 +35,9 @@ from openpyxl.shared.exc import CellCoordinatesException, \
         SheetTitleException, InsufficientCoordinatesException, \
         NamedRangeException
 from openpyxl.writer.worksheet import write_worksheet
+from openpyxl.tests.helper import OpenPyxlTest
 
-class TestWorksheet(object):
+class TestWorksheet(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):

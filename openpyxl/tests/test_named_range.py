@@ -30,7 +30,8 @@ import os.path
 from nose.tools import eq_, assert_raises, ok_
 
 # package imports
-from openpyxl.tests.helper import DATADIR, TMPDIR, clean_tmpdir, make_tmpdir
+from openpyxl.tests.helper import (DATADIR, TMPDIR, clean_tmpdir, make_tmpdir,
+    OpenPyxlTest)
 from openpyxl.namedrange import split_named_range, NamedRange
 from openpyxl.reader.workbook import read_named_ranges
 from openpyxl.shared.exc import NamedRangeException
@@ -129,7 +130,7 @@ def test_merged_cells_named_range():
 
 
 
-class TestNameRefersToValue(object):
+class TestNameRefersToValue(OpenPyxlTest):
     def setUp(self):
         self.wb = load_workbook(os.path.join(DATADIR, 'genuine', 'NameWithValueBug.xlsx'))
         self.ws = self.wb.get_sheet_by_name("Sheet1")

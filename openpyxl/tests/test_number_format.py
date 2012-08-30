@@ -35,6 +35,7 @@ from openpyxl.worksheet import Worksheet
 from openpyxl.cell import Cell
 from openpyxl.style import NumberFormat
 from openpyxl.shared.date_time import SharedDate, CALENDAR_MAC_1904, CALENDAR_WINDOWS_1900
+from openpyxl.tests.helper import OpenPyxlTest
 
 from datetime import datetime
 import time
@@ -49,7 +50,7 @@ else:
     strptime = lambda date_string, format: datetime(*(time.strptime(date_string, format)[0:6]))
 
 
-class TestNumberFormat(object):
+class TestNumberFormat(OpenPyxlTest):
 
     @classmethod
     def setup_class(cls):

@@ -25,13 +25,13 @@
 
 from nose.tools import eq_, raises, assert_raises
 import os.path as osp
-from openpyxl.tests.helper import DATADIR
+from openpyxl.tests.helper import DATADIR, OpenPyxlTest
 from openpyxl.reader.iter_worksheet import get_range_boundaries
 from openpyxl.reader.excel import load_workbook
 from openpyxl.shared.compat import xrange
 import datetime
 
-class TestWorksheet(object):
+class TestWorksheet(OpenPyxlTest):
 
     workbook_name = osp.join(DATADIR, 'genuine', 'empty.xlsx')
 
